@@ -1,5 +1,7 @@
+//  globals.css
+
 export const HEADER = {
-  H_MOBILE: 16, // 64px
-  H_DESKTOP: 28, // 112px
-  H_DESKTOP_OFFSET: 20, // 80px
+  H_MOBILE: 64,
+  H_DESKTOP: 120,
+  H_DESKTOP_OFFSET: 72,
 };
