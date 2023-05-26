@@ -10,7 +10,7 @@ export default function MainLayout({
   return (
     <>
       <Header />
-      <main className={`container grow mx-auto pt-${HEADER.H_DESKTOP}`}>
+      <main className={`container grow mx-auto pt-[--header-desktop]`}>
         {children}
       </main>
       <Footer />

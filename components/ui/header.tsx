@@ -52,10 +52,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed w-full bg-white h-${HEADER.H_MOBILE} ${
+      className={`fixed w-full z-50 bg-white h-[--header-mobile] ${
         isOffset
-          ? `shadow-lg md:h-${HEADER.H_DESKTOP_OFFSET}`
-          : `md:h-${HEADER.H_DESKTOP}`
+          ? `shadow-lg md:h-[--header-desktop-offset]`
+          : `md:h-[--header-desktop]`
       } transition-all`}
     >
       <div
@@ -78,7 +78,7 @@ export default function Header() {
               {item.menu && (
                 <ul
                   className="
-                    invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 absolute left-0 bg-primary-main text-white w-max p-1 transition ease-in duration-200
+                    invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 absolute left-0 bg-primary text-white w-max p-1 transition ease-in duration-200
                    "
                 >
                   {item.menu.map((menu) => (
