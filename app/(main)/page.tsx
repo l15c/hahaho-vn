@@ -1,4 +1,10 @@
-import Image from "next/image";
+import {
+  Banner,
+  Maxim,
+  Products,
+  TypicalCustomers,
+  TechnologyPartner
+} from "../../sections/homepage";
 
 export const metadata = {
   title: "Trang chủ | HAHAHO",
@@ -7,8 +13,14 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <p className="bg-white text-black" style={{ height: "200vh" }}>
-      HAHAHO.VN
-    </p>
+    <>
+      <Banner />
+      <div className="mx-auto mt-24 max-w-[896px]">
+        <Maxim />
+        <Products />
+      </div>
+      <TypicalCustomers />
+      <TechnologyPartner />
+    </>
   );
 }
