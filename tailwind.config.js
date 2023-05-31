@@ -4,6 +4,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./sections/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -11,12 +12,24 @@ module.exports = {
         primary: {
           DEFAULT: "#F05A32",
         },
+        product: {
+          "e-office": "#00529C",
+          task: "#ED2224",
+          crm: "#CC6C28",
+          hrm: "#198754",
+        },
       },
     },
   },
   plugins: [require("daisyui")],
   daisyui: {
     darkTheme: false,
+    styled: true,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
     themes: [
       {
         mytheme: {
