@@ -1,9 +1,10 @@
 import Image from "next/image";
+import FormContact from "@/app/(main)/component/footer/form-contact";
 
 export default function BannerFooter() {
   return (
     <>
-      <div className="relative h-72">
+      <div className="relative h-72 max-w-[1920px] mx-auto">
         <div className="absolute w-full h-full bg-[#636366]/[.42]" />
         <Image
           alt="contact"
@@ -46,87 +47,7 @@ export default function BannerFooter() {
                 <path d="M19.4818 17.025C20.1727 17.7159 20.1727 18.7908 19.4818 19.4818C19.1363 19.8273 18.714 19.9808 18.2534 19.9808C17.7927 19.9808 17.3704 19.8273 17.025 19.4818L10 12.4568L2.97505 19.4818C2.62956 19.8273 2.20729 19.9808 1.74664 19.9808C1.28599 19.9808 0.863724 19.8273 0.518234 19.4818C-0.172745 18.7908 -0.172745 17.7159 0.518234 17.025L7.54319 10L0.518234 2.97505C-0.172745 2.28407 -0.172745 1.20921 0.518234 0.518234C1.20921 -0.172745 2.28407 -0.172745 2.97505 0.518234L10 7.54319L17.025 0.518234C17.7159 -0.172745 18.7908 -0.172745 19.4818 0.518234C20.1727 1.20921 20.1727 2.28407 19.4818 2.97505L12.4568 10L19.4818 17.025Z" />
               </svg>
             </label>
-            <div className="w-full flex items-center h-32 bg-primary text-white font-bold text-[34px]">
-              <div className="w-20 h-20 rounded-full bg-white opacity-90 flex mx-9">
-                <svg
-                  width="35"
-                  height="35"
-                  viewBox="0 0 35 35"
-                  className="fill-primary m-auto"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <PathPhone />
-                </svg>
-              </div>
-
-              <p>
-                Hotline
-                <br />
-                028 7303 4668
-              </p>
-            </div>
-            <form
-              method="POST"
-              className="w-full px-24 py-11 h-[550px] grid gap-10"
-            >
-              <div className="h-fit">
-                <label htmlFor="" className="block font-medium text-primary">
-                  Họ và tên (*):
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  className="w-full h-10 border-b border-primary"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="" className="block font-medium text-primary">
-                  Sản phẩm/Giải pháp bạn quan tâm:
-                </label>
-                <input
-                  type="text"
-                  className="w-full h-10 border-b border-primary"
-                />
-              </div>
-              <div>
-                <label htmlFor="" className="block font-medium text-primary">
-                  Tên doanh nghiệp:
-                </label>
-                <input
-                  type="text"
-                  className="w-full h-10 border-b border-primary"
-                />
-              </div>
-              <div className="flex space-y-10 sm:space-y-0 sm:space-x-5 flex-col sm:flex-row">
-                <div className="grow">
-                  <label htmlFor="" className="block font-medium text-primary">
-                    Email:
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full h-10 border-b border-primary"
-                  />
-                </div>
-                <div className="grow">
-                  <label htmlFor="" className="block font-medium text-primary">
-                    Số điện thoại (*):
-                  </label>
-                  <input
-                    type="text"
-                    pattern="(84|0[3|5|7|8|9])+([0-9]{8})"
-                    className="w-full h-10 border-b border-primary"
-                    required
-                  />
-                </div>
-              </div>
-              <button
-                type="submit"
-                className="btn btn-primary rounded-[50px] text-white mx-auto w-36"
-              >
-                Gửi thông tin
-              </button>
-            </form>
+            <FormContact />
           </label>
         </label>
       </>

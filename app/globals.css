@@ -4,7 +4,7 @@
 
 :root {
   --header-mobile: 64px;
-  --header-desktop: 120px;
+  --header-desktop: 96px;
   --header-desktop-offset: 72px;
 }
 
@@ -19,4 +19,8 @@
   border-width: 0;
   outline: 0;
   font-size: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
