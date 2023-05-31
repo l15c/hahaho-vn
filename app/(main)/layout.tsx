@@ -1,6 +1,5 @@
-import Footer from "@/components/ui/footer";
-import Header from "@/components/ui/header";
-import { HEADER } from "@/config-global";
+import Footer from "./component/footer";
+import Header from "./component/header";
 
 export default function MainLayout({
   children,
@@ -10,9 +9,7 @@ export default function MainLayout({
   return (
     <>
       <Header />
-      <main className={`container grow mx-auto pt-[--header-desktop]`}>
-        {children}
-      </main>
+      <main className="grow pt-[--header-desktop]">{children}</main>
       <Footer />
     </>
   );
