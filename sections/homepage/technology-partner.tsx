@@ -43,7 +43,7 @@ export default function TechnologyPartner() {
     prevArrow: <PrevArrow />,
   };
   return (
-    <section className="mt-36 max-w-none">
+    <section className="my-18 max-w-none">
       <div className="h-[100px] w-full bg-[#f8f8f9] text-center text-4xl font-bold uppercase leading-[100px] text-primary">
         Đối tác công nghệ
       </div>

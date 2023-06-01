@@ -20,7 +20,7 @@ export default function FormContact() {
           028 7303 4668
         </p>
       </div>
-      <form action="/" className="grid h-[550px] w-full gap-4 px-24 py-11">
+      <form action="/" className="grid h-[540px] w-full gap-4 px-24 py-11">
         <div className="h-fit">
           <label htmlFor="name" className="block font-medium text-primary">
             Họ và tên (*):

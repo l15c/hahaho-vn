@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Slider from "react-slick";
+import Slider, { CustomArrowProps } from "react-slick";
 
 const LOGO = [
   "BTTM.png",
@@ -11,6 +11,27 @@ const LOGO = [
   "hoa-sen.png",
   "mai-linh.png",
 ];
+function NextArrow(props: CustomArrowProps) {
+  const { className, onClick } = props;
+  return (
+    <div
+      className={`${className} !-right-[60px] !h-[50px] !w-[50px] before:!content-[''] `}
+      style={{ backgroundImage: "url(/images/right-arrow.png)" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function PrevArrow(props: CustomArrowProps) {
+  const { className, onClick } = props;
+  return (
+    <div
+      className={`${className} !-left-[60px] !h-[50px] !w-[50px] before:!content-[''] `}
+      style={{ backgroundImage: "url(/images/left-arrow.png)" }}
+      onClick={onClick}
+    />
+  );
+}
 
 export default function TypicalCustomers() {
   const settings = {
@@ -18,10 +39,12 @@ export default function TypicalCustomers() {
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
+    // autoplay: true,
+    // speed: 2000,
+    // autoplaySpeed: 2000,
+    // cssEase: "linear",
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
   return (
     <section className="mt-36 max-w-none">
