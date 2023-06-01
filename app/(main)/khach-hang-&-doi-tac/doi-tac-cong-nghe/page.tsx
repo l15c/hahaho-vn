@@ -1,8 +1,5 @@
-import {
-  Banner,
-  Introduce,
-  Timeline,
-} from "@/sections/about-us/hanh-trinh-phat-trien";
+import { TechnologyPartner } from "@/sections/homepage";
+import { Banner } from "@/sections/khach-hang-va-doi-tac/doi-tac-cong-nghe";
 
 export const metadata = {
   title: "Đối tác công nghệ | HAHAHO",
@@ -13,8 +10,8 @@ export default function Page() {
   return (
     <>
       <Banner />
-      <Introduce />
-      <Timeline />
+      <TechnologyPartner/>
+    
     </>
   );
 }

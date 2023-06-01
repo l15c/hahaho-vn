@@ -10,6 +10,12 @@ const LOGO = [
   "dong-tam.png",
   "hoa-sen.png",
   "mai-linh.png",
+  "BVNK-Nam_SG.png",
+  "PV-Drilling.png",
+  "QTSC.png",
+  "thaco.png",
+  "vietsovpetro.png",
+  "VNPT.png",
 ];
 function NextArrow(props: CustomArrowProps) {
   const { className, onClick } = props;
@@ -47,12 +53,8 @@ export default function TypicalCustomers() {
     prevArrow: <PrevArrow />,
   };
   return (
-    <section className="mt-36 max-w-none">
-      <div className="h-[100px] w-full bg-[#f8f8f9] text-center text-4xl font-bold uppercase leading-[100px] text-primary">
-        Khách hàng tiêu biểu
-      </div>
-
-      <Slider {...settings} className="my-24 max-w-[1000px] mx-auto">
+    <section className="mt-8 max-w-none">
+      <Slider {...settings} className="mx-auto my-24 max-w-[1000px]">
         {LOGO.map((url) => (
           <div key={url} className="relative h-24">
             <Image
