@@ -43,16 +43,13 @@ export default function TechnologyPartner() {
     prevArrow: <PrevArrow />,
   };
   return (
-    <section className="mt-36 max-w-none">
-      <div className="h-[100px] w-full bg-[#f8f8f9] text-center text-4xl font-bold uppercase leading-[100px] text-primary">
-        Đối tác công nghệ
-      </div>
-
+    <section className="my-18 max-w-none">
       <Slider {...settings} className="mx-auto my-24 max-w-[1000px]">
         {LOGO.map((url) => (
           <div key={url} className="relative h-24">
             <Image
               alt="Logo"
+              priority={true}
               src={`/logo/partners/${url}`}
               width={0}
               height={0}

@@ -3,11 +3,7 @@ import Image from "next/image";
 export default function Products() {
   return (
     <section>
-      <p className="text-center text-4xl font-bold uppercase text-primary">
-        Sản phẩm
-      </p>
-
-      <div className="mt-16 border-b-[3px] border-primary" />
+      <div className=" border-b-[3px] border-primary" />
       <div className="flex  text-center">
         <div className="mt-4 w-full flex-grow">
           <p className="text-4xl font-bold">NỀN TẢNG iBPM 2.0</p>
