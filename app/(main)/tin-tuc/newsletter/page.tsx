@@ -1,8 +1,6 @@
-import {
-  Banner,
-  Introduce,
-  Timeline,
-} from "@/sections/about-us/hanh-trinh-phat-trien";
+
+import { Banner } from "@/sections/news";
+import ListContent from "@/sections/news/listContent";
 
 export const metadata = {
   title: "Newsletter | HAHAHO",
@@ -13,8 +11,7 @@ export default function Page() {
   return (
     <>
       <Banner />
-      <Introduce />
-      <Timeline />
+      <ListContent />
     </>
   );
 }
