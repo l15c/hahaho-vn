@@ -1,4 +1,5 @@
 import { Banner } from "@/sections/quy-trinh-dich-vu-va-hop-tac";
+import TabDichVuVaHopTac from "@/sections/quy-trinh-dich-vu-va-hop-tac/tab-dich-vu-va-hop-tac";
 
 export const metadata = {
   title: "Quy trình dịch vụ | HAHAHO",
@@ -7,8 +8,9 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <>
-  <Banner/>
-  </>
-  )
+    <section className="mb-24">
+      <Banner />
+      <TabDichVuVaHopTac/>
+    </section>
+  );
 }
