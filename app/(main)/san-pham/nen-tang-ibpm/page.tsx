@@ -384,7 +384,7 @@ const DATA = [
   },
 ];
 
-export async function getProduct(slug: string) {
+async function getProduct(slug: string) {
   const product = DATA.find((e) => e.url.split('/').pop() === slug);
   const otherProducts = DATA.filter((e) => e.url.split('/').pop() !== slug);
 
@@ -430,15 +430,21 @@ export default async function Page() {
           {html(slogan!)}
         </p>
       </div>
-      <div className="mx-auto grid max-w-[1200px] grid-cols-6 gap-5 mb-[150px]">
+      <div className="mx-auto mb-[150px] grid max-w-[1200px] grid-cols-6 gap-5">
         {extra.map((e: string, idx: number) => (
           <div
             key={idx}
             className={`${
-                (idx + 2) % 5 === 0 ? 'col-start-2' : ''
-            } col-span-2 h-[280px] rounded-[20px] bg-primary p-9 text-justify text-2xl text-white mx-auto`}
+              (idx + 2) % 5 === 0 ? 'col-start-2' : ''
+            } col-span-2 mx-auto h-[280px] rounded-[20px] bg-primary p-9 text-justify text-2xl text-white`}
           >
-            <Image src="/svg/check.svg" alt="Check icon" width={35} height={35} className='mx-auto mb-4' />
+            <Image
+              src="/svg/check.svg"
+              alt="Check icon"
+              width={35}
+              height={35}
+              className="mx-auto mb-4"
+            />
             <p>{html(e)}</p>
           </div>
         ))}

@@ -315,7 +315,7 @@ export async function generateStaticParams() {
   return SLUGS;
 }
 
-export async function getProduct(slug: string) {
+async function getProduct(slug: string) {
   const product = DATA.find((e) => e.url.split('/').pop() === slug);
   const otherProducts = DATA.filter((e) => e.url.split('/').pop() !== slug);
 

@@ -45,28 +45,25 @@ export default function OtherProducts({ color, products }: Props) {
     nextArrow: <NextArrow color={color} />,
     prevArrow: <PrevArrow color={color} />,
   };
-  console.log(products);
   return (
     <section className="my-18 max-w-none">
       <Slider {...settings} className="mx-auto my-24 max-w-[1000px]">
         {products.map(({ color, iconUrl, name, title, url }) => {
           const _title = title.split('Phần mềm quản lý ').pop() ?? '';
           return (
-            <Link
-              key={url}
-              href={url}
-              className="group"
-
-            >
-              <div className="relative mx-auto h-36 w-36 rounded-[20px]" style={{ backgroundColor: color }}>
+            <Link key={url} href={url} className="group">
+              <div
+                className="relative mx-auto h-36 w-36 rounded-[20px]"
+                style={{ backgroundColor: color }}
+              >
                 <Image
-                    alt="Logo"
-                    priority
-                    src={iconUrl}
-                    width={0}
-                    height={0}
-                    sizes="100vh"
-                    className=" h-36 w-36 rounded-[20px] bg-[#636366] p-6 group-hover:bg-inherit"
+                  alt="Logo"
+                  priority
+                  src={iconUrl}
+                  width={0}
+                  height={0}
+                  sizes="100vh"
+                  className=" h-36 w-36 rounded-[20px] bg-[#636366] p-6 group-hover:bg-inherit"
                 />
               </div>
 
