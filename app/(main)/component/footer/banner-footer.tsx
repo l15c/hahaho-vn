@@ -1,26 +1,26 @@
-import Image from "next/image";
-import FormContact from "@/app/(main)/component/footer/form-contact";
+import Image from 'next/image';
+import FormContact from '@/app/(main)/component/footer/form-contact';
 
 export default function BannerFooter() {
   return (
     <>
-      <div className="relative h-72 max-w-[1920px] mx-auto">
-        <div className="absolute w-full h-full bg-[#636366]/[.42]" />
+      <div className="relative mx-auto h-72 max-w-[1920px]">
+        <div className="absolute h-full w-full bg-[#636366]/[.42]" />
         <Image
           alt="contact"
           src="/images/background/footer.png"
           width={0}
           height={0}
           sizes="100vw"
-          className="w-full h-full"
+          className="h-full w-full"
         />
-        <div className="absolute grid top-1/2 -translate-y-1/2 w-full">
-          <p className=" text-white text-[34px] font-bold text-center">
+        <div className="absolute top-1/2 grid w-full -translate-y-1/2">
+          <p className=" text-center text-[34px] font-bold text-white">
             Liên hệ với chúng tôi để được tư vấn miễn phí !
           </p>
           <label
             htmlFor="btn-contact"
-            className="btn btn-primary  mt-8 mx-auto h-11 w-[148px] text-white uppercase rounded-[50px] text-sm font-bold"
+            className="btn-primary btn mx-auto mt-8 h-11 w-[148px] rounded-[50px] text-sm font-bold uppercase text-white"
           >
             Liên hệ ngay
           </label>
@@ -31,11 +31,11 @@ export default function BannerFooter() {
         <label htmlFor="btn-contact" className="modal cursor-pointer">
           <label
             htmlFor=""
-            className="modal-box rounded-none p-0 min-w-[600px] bg-white relative"
+            className="modal-box relative min-w-[600px] rounded-none bg-white p-0"
           >
             <label
               htmlFor="btn-contact"
-              className="cursor-pointer absolute right-10 top-8"
+              className="absolute right-10 top-8 cursor-pointer"
             >
               <svg
                 width="20"

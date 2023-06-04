@@ -1,15 +1,6 @@
 {
-    "arrowParens": "always",
-    "bracketSameLine": false,
-    "bracketSpacing": true,
-    "embeddedLanguageFormatting": "auto",
-    "htmlWhitespaceSensitivity": "css",
-    "jsxSingleQuote": false,
-    "requirePragma": false,
-    "semi": true,
-    "singleAttributePerLine": false,
-    "singleQuote": false,
-    "tabWidth": 2,
+    "printWidth": 80,
+    "singleQuote": true,
     "trailingComma": "es5",
-    "printWidth": 80
+    "tabWidth": 2
 }

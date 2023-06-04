@@ -13,6 +13,11 @@ export const PATH = {
   },
   products: {
     root: "/san-pham",
+    eOffice: '/san-pham/e-office-management',
+    task: '/san-pham/task-management',
+    crm: '/san-pham/customer-relationship-management',
+    hrm: '/san-pham/human-resource-management',
+    ibpm: '/san-pham/nen-tang-ibpm',
   },
   quyTrinh: {
     root: "/quy-trinh-dich-vu",
