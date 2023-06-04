@@ -12,12 +12,6 @@ module.exports = {
         primary: {
           DEFAULT: "#F05A32",
         },
-        product: {
-          "e-office": "#00529C",
-          task: "#ED2224",
-          crm: "#CC6C28",
-          hrm: "#198754",
-        },
       },
     },
   },
