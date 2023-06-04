@@ -1,20 +1,15 @@
-import {
-  Banner,
-  Introduce,
-  Timeline,
-} from "@/sections/about-us/hanh-trinh-phat-trien";
+import { Banner, Content } from '@/sections/about-us/lanh-dao';
 
 export const metadata = {
-  title: "Đội ngũ lãnh đạo | HAHAHO",
-  description: "",
+  title: 'Đội ngũ lãnh đạo | HAHAHO',
+  description: '',
 };
 
 export default function Page() {
   return (
     <>
       <Banner />
-      <Introduce />
-      <Timeline />
+      <Content />
     </>
   );
 }
