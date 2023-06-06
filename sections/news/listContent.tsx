@@ -1,6 +1,7 @@
 'use client'
 
 import {  usePathname } from "next/navigation";
+import Link from 'next/link';
 
 type Props = {};
 const listPage = [
@@ -35,12 +36,12 @@ const ListContent = (props: Props) => {
                 key={index}
                 className="group menu-title flex h-14 text-left align-middle text-black !opacity-100 hover:bg-primary hover:text-white"
               >
-                <a
+                <Link
                   href={item.link}
                   className=" my-auto text-2xl font-normal !opacity-100  group-hover:text-white "
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

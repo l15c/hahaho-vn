@@ -12,7 +12,7 @@ export default function Page() {
     <>
       <Banner />
       <h1 className="h-[100px] w-full bg-[#F8F8F9] py-9 text-center text-4xl font-semibold uppercase text-primary">
-        Khác hàng tiêu biểu
+        Khách hàng tiêu biểu
       </h1>
       <p className="mx-auto w-[896px] py-6 text-justify text-2xl leading-[140%]">
         HAHAHO đã triển khai thành công nhiều dự án chuyển đổi số cho các doanh
