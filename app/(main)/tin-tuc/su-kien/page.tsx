@@ -1,6 +1,6 @@
 
 import { Banner } from "@/sections/news";
-import ListContent from "@/sections/news/listContent";
+import ListContent from "@/sections/news/ListContent";
 
 export const metadata = {
   title: "Sự kiện | HAHAHO",
