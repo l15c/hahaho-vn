@@ -1,10 +1,9 @@
-
-import { Banner } from "@/sections/news";
-import ListContent from "@/sections/news/listContent";
+import { Banner } from '@/sections/news';
+import ListContent from '@/sections/news/ListContent';
 
 export const metadata = {
-  title: "Newsletter | HAHAHO",
-  description: "",
+  title: 'Newsletter | HAHAHO',
+  description: '',
 };
 
 export default function Page() {

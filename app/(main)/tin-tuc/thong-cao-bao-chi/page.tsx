@@ -1,17 +1,16 @@
-
-import { Banner } from "@/sections/news";
-import ListContent from "@/sections/news/listContent";
+import { Banner } from '@/sections/news';
+import ListContent from '@/sections/news/ListContent';
 
 export const metadata = {
-  title: "Thông cáo báo chí | HAHAHO",
-  description: "",
+  title: 'Thông cáo báo chí | HAHAHO',
+  description: '',
 };
 
 export default function Page() {
   return (
     <>
       <Banner />
-      <ListContent/>
+      <ListContent />
     </>
   );
 }

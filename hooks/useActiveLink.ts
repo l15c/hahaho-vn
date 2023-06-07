@@ -1,4 +1,4 @@
-import { usePathname } from "next/navigation";
+import { usePathname } from 'next/navigation';
 
 // ----------------------------------------------------------------------
 
@@ -13,16 +13,14 @@ export default function useActiveLink(path: string, deep = true): ReturnType {
 
   const currentPath = path === '/' ? '/' : `${path}`;
 
-  const normalActive =
-    (!checkPath && pathname === currentPath) 
-    // || (!checkPath && asPath === currentPath);
+  const normalActive = !checkPath && pathname === currentPath;
+  // || (!checkPath && asPath === currentPath);
 
-  const deepActive =
-    (!checkPath && pathname.includes(currentPath)) 
-    // || (!checkPath && asPath.includes(currentPath));
+  const deepActive = !checkPath && (pathname || '').includes(currentPath);
+  // || (!checkPath && asPath.includes(currentPath));
 
   return {
     active: deep ? deepActive : normalActive,
-    isExternalLink: path.includes("http"),
+    isExternalLink: path.includes('http'),
   };
 }
