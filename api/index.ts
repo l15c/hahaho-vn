@@ -6,7 +6,7 @@ import { Config } from '@/types/common';
 // ----------------------------------------------------------------------
 
 const axiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_STRAPI_API_URL,
+  baseURL: process.env.CMS_API_URL,
   headers: {
     Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
   },

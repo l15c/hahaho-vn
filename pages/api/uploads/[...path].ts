@@ -17,7 +17,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) =>
     req.url = req.url?.replace('/api', '');
 
     proxy.web(req, res, {
-      target: process.env.NEXT_PUBLIC_STRAPI_API_URL,
+      target: process.env.CMS_API_URL,
       changeOrigin: true,
     });
 
