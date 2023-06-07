@@ -1,17 +1,17 @@
-'use client'
+'use client';
 
-import {  usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-type Props = {};
 const listPage = [
-  { name: "Tin HAHAHO", link: "/tin-tuc/tin-hahaho" },
-  { name: "Sự Kiện", link: "/tin-tuc/su-kien" },
-  { name: "Thông cáo báo chí", link: "/tin-tuc/thong-cao-bao-chi" },
-  { name: "Newsletter", link: "/tin-tuc/newsletter" },
+  { name: 'Tin HAHAHO', link: '/tin-tuc/tin-hahaho' },
+  { name: 'Sự Kiện', link: '/tin-tuc/su-kien' },
+  { name: 'Thông cáo báo chí', link: '/tin-tuc/thong-cao-bao-chi' },
+  { name: 'Newsletter', link: '/tin-tuc/newsletter' },
 ];
-const ListContent = (props: Props) => {
- const pathname = usePathname();
-  const currentPage =listPage.filter((item) => item.link === pathname);
+const ListContent = () => {
+  const pathname = usePathname();
+  const currentPage = listPage.filter((item) => item.link === pathname);
 
   return (
     <>
@@ -35,12 +35,12 @@ const ListContent = (props: Props) => {
                 key={index}
                 className="group menu-title flex h-14 text-left align-middle text-black !opacity-100 hover:bg-primary hover:text-white"
               >
-                <a
+                <Link
                   href={item.link}
                   className=" my-auto text-2xl font-normal !opacity-100  group-hover:text-white "
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

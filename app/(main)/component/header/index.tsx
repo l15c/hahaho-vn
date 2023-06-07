@@ -1,58 +1,57 @@
-"use client";
+'use client';
 
-import Logo from "../logo";
-import { HEADER } from "@/config-global";
-import useOffSetTop from "@/hooks/useOffSetTop";
-import Item from "./Item";
-import { PATH } from "@/routes/path";
+import Logo from '../logo';
+import useOffSetTop from '@/hooks/useOffSetTop';
+import Item from './Item';
+import { PATH } from '@/routes/path';
 
 const HEADER_MENU = [
   {
-    title: "Về chúng tôi",
+    title: 'Về chúng tôi',
     href: PATH.aboutUs.root,
     menu: [
-      { label: "Thư ngỏ", href: PATH.aboutUs.thuNgo },
+      { label: 'Thư ngỏ', href: PATH.aboutUs.thuNgo },
       {
-        label: "Hành trình phát triển",
+        label: 'Hành trình phát triển',
         href: PATH.aboutUs.hanhTrinh,
       },
-      { label: "Đội ngũ lãnh đạo", href: PATH.aboutUs.lanhDao },
+      { label: 'Đội ngũ lãnh đạo', href: PATH.aboutUs.lanhDao },
     ],
   },
   {
-    title: "Khách hàng & đối tác",
+    title: 'Khách hàng & đối tác',
     href: PATH.customer.root,
     menu: [
-      { label: "Khách hàng tiêu biểu", href: PATH.customer.tieuBieu },
-      { label: "Đối tác công nghệ", href: PATH.customer.doiTac },
+      { label: 'Khách hàng tiêu biểu', href: PATH.customer.tieuBieu },
+      { label: 'Đối tác công nghệ', href: PATH.customer.doiTac },
     ],
   },
   {
-    title: "Sản phẩm",
+    title: 'Sản phẩm',
     href: PATH.products.root,
   },
   {
-    title: "Quy trình dịch vụ & hợp tác",
+    title: 'Quy trình dịch vụ & hợp tác',
     href: PATH.quyTrinh.root,
   },
   {
-    title: "Tin tức",
+    title: 'Tin tức',
     href: PATH.news.root,
     menu: [
-      { label: "Tin HAHAHO", href: PATH.news.hahaho },
-      { label: "Sự kiện", href: PATH.news.suKien },
-      { label: "Thông cáo báo chí", href: PATH.news.thongCao },
-      { label: "Newsletter", href: PATH.news.newsletter },
+      { label: 'Tin HAHAHO', href: PATH.news.hahaho },
+      { label: 'Sự kiện', href: PATH.news.suKien },
+      { label: 'Thông cáo báo chí', href: PATH.news.thongCao },
+      { label: 'Newsletter', href: PATH.news.newsletter },
     ],
   },
   {
-    title: "Liên hệ ",
+    title: 'Liên hệ ',
     href: PATH.contact.root,
   },
 ];
 
 export default function Header() {
-  const isOffset = useOffSetTop(HEADER.H_DESKTOP);
+  const isOffset = useOffSetTop(96);
 
   return (
     <header
