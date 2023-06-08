@@ -1,5 +1,6 @@
+import pagesApi from "@/api/pages";
 import { TypicalCustomers } from "@/sections/homepage";
-import { Banner } from "@/sections/khach-hang-va-doi-tac/khach-hang-tieu-bieu";
+import Banner from '@/components/Banner';
 import CustomerStory from "@/sections/khach-hang-va-doi-tac/khach-hang-tieu-bieu/customer-story";
 
 export const metadata = {
@@ -7,24 +8,33 @@ export const metadata = {
   description: "",
 };
 
-export default function Page() {
+export default async function Page() {
+  const res = await pagesApi.typicalCustomers();
+  // console.log(res.data.logo)
+  const {
+    banner: {
+      image: {url},
+      },
+    description,
+    logo,
+    customer,
+  } = res.data;
+
   return (
     <>
-      <Banner />
+      <Banner imageUrl={url}/>
       <h1 className="h-[100px] w-full bg-[#F8F8F9] py-9 text-center text-4xl font-semibold uppercase text-primary">
         Khác hàng tiêu biểu
       </h1>
       <p className="mx-auto w-[896px] py-6 text-justify text-2xl leading-[140%]">
-        HAHAHO đã triển khai thành công nhiều dự án chuyển đổi số cho các doanh
-        nghiệp tư nhân và nhà nước trong thời gian vừa qua, tiêu biểu là các
-        giải pháp chuyển đổi số trong các lĩnh vực an ninh quốc phòng, sản xuất,
-        dịch vụ, y tế và thương mại.
+        {description}
+      
       </p>
-      <TypicalCustomers />
+      <TypicalCustomers listLogo={logo} />
       <h1 className="h-[100px] w-full bg-[#F8F8F9] py-9 text-center text-4xl font-semibold uppercase text-primary">
         câu chuyện khách hàng
       </h1>
-      <CustomerStory/>
+      {/* <CustomerStory listStory={customer} /> */}
     </>
   );
 }

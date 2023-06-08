@@ -1,5 +1,7 @@
 "use client";
 
+import {  Media } from "@/types/common";
+import { ListMedia } from "@/types/component";
 import Image from "next/image";
 import Slider, { CustomArrowProps } from "react-slick";
 
@@ -39,31 +41,32 @@ function PrevArrow(props: CustomArrowProps) {
   );
 }
 
-export default function TypicalCustomers() {
+type Props = {
+  listLogo: ListMedia;
+};
+ 
+export default function TypicalCustomers({listLogo}: Props ) {
   const settings = {
     dots: false,
     infinite: true,
+    // slidesToShow: listLogo?.images.length > 5 ? 5 : listLogo?.images.length,
     slidesToShow: 5,
     slidesToScroll: 1,
-    // autoplay: true,
-    // speed: 2000,
-    // autoplaySpeed: 2000,
-    // cssEase: "linear",
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
   return (
-    <section className="mt-8 max-w-none">
+    <section className="mt-8 max-w-none ">
       <Slider {...settings} className="mx-auto my-24 max-w-[1000px]">
-        {LOGO.map((url) => (
-          <div key={url} className="relative h-24">
+        {listLogo.images.map((logo) => (
+          <div key={logo.id} className="relative h-24">
             <Image
               alt="Logo"
-              src={`/logo/customers/${url}`}
+              src={`/api${logo.url}`}
               width={0}
               height={0}
-              sizes="100vw"
-              className="mx-auto h-full w-auto object-scale-down"
+              sizes="100vh"
+              className=" h-full w-auto mx-auto object-scale-down"
             />
           </div>
         ))}

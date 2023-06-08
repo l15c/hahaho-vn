@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="vi">
       <body className={`${roboto.className} flex min-h-screen flex-col`}>
         <MotionLazyContainer>{children}</MotionLazyContainer>
+        {/* <div className="fixed bottom-8 left-[97%] h-24 w-36 border-spacing-1 rounded-[10000px] bg-primary"></div> */}
       </body>
     </html>
   );
