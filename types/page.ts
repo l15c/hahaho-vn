@@ -1,20 +1,29 @@
-import { Banner, Customer, CustomerStory, Flow, HistoryItem, Image, ImageText, Leadership, Product, ProductBanner, Richtext } from '@/types/component';
+import {
+  Banner,
+  Flow,
+  HistoryItem,
+  Image,
+  ImageText,
+  Leadership,
+  ProductBanner,
+  Richtext,
+} from '@/types/component';
 import { Media } from './common';
-
+import {Customer, GroupImage, Product} from "@/types/collection";
 
 export interface HomePage {
   banner: ProductBanner;
   description: Richtext;
   productPlatform: ImageText[];
-  productInbusiness:Product[];
+  productInbusiness: Product[];
   cutomerLogo: Media[];
   partnerLogo: Image[];
-  title:string;
+  title: string;
 }
 
 export interface LeadershipPage {
-  Banner: Banner;
-  Leaderships: Leadership[];
+  banner: Banner;
+  leaderships: Leadership[];
 }
 
 export interface FlowPage {
@@ -25,27 +34,25 @@ export interface FlowPage {
 export interface TypicalCustomerPage {
   banner: Banner;
   description: string;
-  logo: Media[];
-  customer:Customer[];
+  logo: GroupImage;
+  customer: Customer[];
 }
-export interface DevelopmentJourneyPage{
+export interface DevelopmentJourneyPage {
   banner: Banner;
   description: string;
   image: Media;
   slogans: ImageText[];
   history: HistoryItem[];
-} 
+}
 
-export interface PartnersPage{
+export interface PartnersPage {
   banner: Banner;
   logo: Image[];
 }
 
-export interface OpentLetturePage{
+export interface OpentLetturePage {
   banner: Banner;
   content: Richtext;
   signature: Image;
   signer: string;
 }
-
-

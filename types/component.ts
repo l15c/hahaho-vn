@@ -63,7 +63,7 @@ export interface ProductBanner {
 export interface ProductFeature {
   image: Media;
   title: string;
-  contetn: Richtext;
+  content: Richtext;
 }
 
 // -------------------------------Shared---------------------------------
@@ -76,50 +76,8 @@ export interface Richtext {
   content: string;
 }
 
-export interface Seo{
+export interface SEO{
   metaTitle: string;
   metaDescription: string;
   shareImage: Media;
-}
-
-
-
-// ---------------------------------Common---------------------------------
-
-export interface Product {
-  banner: ProductBanner;
-  description: Richtext;
-  featureImage: Media;
-  features: ProductFeature[];
-  advantages: Advantage[];
-  benefits: Richtext[];
-  title: string;
-  slug:string;
-  color:string;
-}
-
-export interface ListMedia {
-  title: string;
-  images: Media[];
-}
-
-export type Customer = Common & {
-  name: string;
-  year: number;
-  contents: Array<Richtext|Image>;
-};
-
-export interface ImageTitleContent {
-  image: Media;
-  content: string;
-  stage: string;
-}
-
-
-export interface CustomerStory {
-  id: number;
-  Name: string;
-  content1: string;
-  content2: string;
-  Image: Media[];
 }

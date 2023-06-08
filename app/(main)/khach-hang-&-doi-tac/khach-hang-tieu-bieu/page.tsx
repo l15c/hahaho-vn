@@ -12,9 +12,7 @@ export default async function Page() {
   const res = await pagesApi.typicalCustomers();
   // console.log(res.data.logo)
   const {
-    banner: {
-      image: {url},
-      },
+    banner,
     description,
     logo,
     customer,
@@ -22,7 +20,7 @@ export default async function Page() {
 
   return (
     <>
-      <Banner imageUrl={url}/>
+      <Banner {...banner}/>
       <h1 className="h-[100px] w-full bg-[#F8F8F9] py-9 text-center text-4xl font-semibold uppercase text-primary">
         Khác hàng tiêu biểu
       </h1>

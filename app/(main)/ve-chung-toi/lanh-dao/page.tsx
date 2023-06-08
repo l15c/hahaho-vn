@@ -10,22 +10,12 @@ export const metadata = {
 export default async function Page() {
   const res = await pagesApi.leaderships();
 
-  const {
-    Banner: {
-      Title,
-      Image: {
-        data: {
-          attributes: { url },
-        },
-      },
-    },
-    Leaderships,
-  } = res.data.attributes;
+  const { banner, leaderships } = res.data;
 
   return (
     <>
-      <Banner title={Title} imageUrl={url} />
-      <Content leaderships={Leaderships} />
+      <Banner {...banner} />
+      <Content leaderships={leaderships} />
     </>
   );
 }

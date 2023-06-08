@@ -1,7 +1,7 @@
 "use client";
 
 import {  Media } from "@/types/common";
-import { ListMedia } from "@/types/component";
+import { GroupImage } from "@/types/collection";
 import Image from "next/image";
 import Slider, { CustomArrowProps } from "react-slick";
 
@@ -42,7 +42,7 @@ function PrevArrow(props: CustomArrowProps) {
 }
 
 type Props = {
-  listLogo: ListMedia;
+  listLogo: GroupImage;
 };
  
 export default function TypicalCustomers({listLogo}: Props ) {

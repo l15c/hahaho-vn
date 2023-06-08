@@ -7,10 +7,7 @@ const pagesApi = {
     GET<Response<LeadershipPage>>('/api/leadership-page', {
       ...config,
       params: {
-        populate: {
-          Banner: { populate: '*' },
-          Leaderships: { populate: '*' },
-        },
+        populate: 'deep'
       },
     }),
   typicalCustomers: (config?: Config) =>

@@ -25,7 +25,7 @@ export default function Home() {
       <div className="mt-16 h-[100px] w-full bg-[#f8f8f9] text-center text-4xl font-bold uppercase leading-[100px] text-primary">
         Khách hàng tiêu biểu
       </div>
-      <TypicalCustomers />
+      <TypicalCustomers listLogo={[] as any} />
       <div className="h-[100px] w-full bg-[#f8f8f9] text-center text-4xl font-bold uppercase leading-[100px] text-primary">
         Đối tác công nghệ
       </div>

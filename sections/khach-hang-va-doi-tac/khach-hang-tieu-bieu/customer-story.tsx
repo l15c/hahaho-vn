@@ -1,8 +1,8 @@
 "use client";
 
-import { CustomerStory } from "@/types/component";
 import Image from "next/image";
 import Slider, { CustomArrowProps } from "react-slick";
+import {Customer} from "@/types/collection";
 
 
 type ContentStory={}
@@ -230,7 +230,7 @@ const ListStory = [
 
 ];
 type Props = {
-  listStory: CustomerStory[];
+  listStory: Customer[];
 };
 
 
