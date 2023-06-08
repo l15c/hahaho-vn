@@ -1,4 +1,16 @@
-import { Banner, Flow, Leadership } from '@/types/component';
+import { Banner, Customer, CustomerStory, Flow, HistoryItem, Image, ImageText, Leadership, Product, ProductBanner, Richtext } from '@/types/component';
+import { Media } from './common';
+
+
+export interface HomePage {
+  banner: ProductBanner;
+  description: Richtext;
+  productPlatform: ImageText[];
+  productInbusiness:Product[];
+  cutomerLogo: Media[];
+  partnerLogo: Image[];
+  title:string;
+}
 
 export interface LeadershipPage {
   Banner: Banner;
@@ -6,6 +18,34 @@ export interface LeadershipPage {
 }
 
 export interface FlowPage {
-  Banner: Banner;
-  Flow: Flow[];
+  banner: Banner;
+  flows: Flow[];
 }
+
+export interface TypicalCustomerPage {
+  banner: Banner;
+  description: string;
+  logo: Media[];
+  customer:Customer[];
+}
+export interface DevelopmentJourneyPage{
+  banner: Banner;
+  description: string;
+  image: Media;
+  slogans: ImageText[];
+  history: HistoryItem[];
+} 
+
+export interface PartnersPage{
+  banner: Banner;
+  logo: Image[];
+}
+
+export interface OpentLetturePage{
+  banner: Banner;
+  content: Richtext;
+  signature: Image;
+  signer: string;
+}
+
+

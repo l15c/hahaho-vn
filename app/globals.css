@@ -9,8 +9,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-  }
+  :root {}
 }
 
 * {
@@ -23,4 +22,22 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.slick-dots li button::before {
+  font-size: 16px !important;
+  color: #D9D9D9 !important;
+  opacity: 1 !important;
+  overflow: hidden;
+  /* more CSS */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #F05A32 !important;
+  opacity: 1 !important;
+}
+
+.slick-slide .slick-active{
+  width: fit-content !important;
+  margin: 0 10px !important;
 }

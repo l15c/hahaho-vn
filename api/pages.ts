@@ -1,6 +1,6 @@
 import { GET } from '.';
 import { Config, Response } from '@/types/common';
-import { LeadershipPage } from '@/types/page';
+import { LeadershipPage, TypicalCustomerPage } from '@/types/page';
 
 const pagesApi = {
   leaderships: (config?: Config) =>
@@ -11,6 +11,13 @@ const pagesApi = {
           Banner: { populate: '*' },
           Leaderships: { populate: '*' },
         },
+      },
+    }),
+  typicalCustomers: (config?: Config) =>
+    GET<Response<TypicalCustomerPage>>('/api/customers-page', {
+      ...config,
+      params: {
+        populate: 'deep,4',
       },
     }),
 };
