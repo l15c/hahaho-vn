@@ -3,21 +3,29 @@
 import Image from "next/image";
 import { m } from "framer-motion";
 import { MotionContainer, varFade } from "@/components/animate";
+import { Banner } from "@/types/component";
 
-export default function Banner() {
+type Prop = Banner & { title: string };
+
+export default function Banner({
+  title,
+  name,
+  description,
+  image,
+}: Prop) {
   return (
-    <section className="max-w-[1920px] mx-auto relative h-[462px]">
+    <section className="relative mx-auto h-[462px] max-w-[1920px]">
       <MotionContainer>
         <div
           className="absolute h-full w-full"
           style={{
             background:
-              "linear-gradient(96.79deg, #F05A32 53%, rgba(240, 90, 50, 0) 80%",
+              'linear-gradient(96.79deg, #F05A32 53%, rgba(240, 90, 50, 0) 80%',
           }}
         />
         <Image
           alt="Homepage"
-          src="/images/background/homepage.png"
+          src={`/api${image.url}`}
           width={0}
           height={0}
           sizes="100vw"
@@ -28,21 +36,19 @@ export default function Banner() {
             variants={varFade({ durationIn: 0.7 }).inLeft}
             className="text-4xl font-bold uppercase"
           >
-            CÔNG TY CỔ PHẦN CÔNG NGHỆ HỆ SINH THÁI SỐ HAHAHO
+            {title}
           </m.p>
           <m.p
             variants={varFade({ durationIn: 0.7 }).inLeft}
             className="mt-3 text-2xl font-medium uppercase"
           >
-            HAHAHO DIGITAL ECOSYSTEMS TECHNOLOGY JOINT STOCK COMPANY
+            {name}
           </m.p>
           <m.p
             variants={varFade({ durationIn: 0.7 }).inUp}
             className="mt-5 max-w-[780px]"
           >
-            HAHAHO là đơn vị tiên phong phát triển nền tảng chuyển đổi số iBPM
-            và các giải pháp inBusiness đáp ứng nhu cầu quản lý và lãnh đạo của
-            doanh nghiệp Việt Nam.
+            {description}
           </m.p>
           <m.label
             variants={varFade({ durationIn: 1 }).in}

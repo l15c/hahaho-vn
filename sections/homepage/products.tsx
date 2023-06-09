@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { PATH } from '@/routes/path';
 import Link from 'next/link';
+import { Product } from '@/types/collection';
 
 const { hrm, crm, eOffice, task } = PATH.products;
 const PRODUCTS = [
@@ -33,13 +34,20 @@ const PRODUCTS = [
     iconUrl: '/svg/hrm.svg',
   },
 ];
-export default function Products() {
+
+type PropProduct={
+  productPlatform:Product,
+  productInbusiness:Product[],
+}
+
+export default function Products({productPlatform,productInbusiness}:PropProduct) {
+  console.log(productPlatform);
   return (
     <section>
       <div className=" border-b-[3px] border-primary" />
       <div className="flex  text-center">
         <div className="mt-4 w-full flex-grow">
-          <p className="text-4xl font-bold">NỀN TẢNG iBPM 2.0</p>
+          <p className="text-4xl font-bold uppercase">{}</p>
           <p className="px-14 pt-3 text-2xl uppercase">
             Bộ công cụ tự động hóa quy trình doanh nghiệp
           </p>

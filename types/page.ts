@@ -2,7 +2,7 @@ import {
   Banner,
   Flow,
   HistoryItem,
-  Image,
+  Picture,
   ImageText,
   Leadership,
   ProductBanner,
@@ -13,11 +13,11 @@ import {Customer, GroupImage, Product} from "@/types/collection";
 
 export interface HomePage {
   banner: ProductBanner;
-  description: Richtext;
-  productPlatform: ImageText[];
+  description: string;
+  productPlatform: Product;
   productInbusiness: Product[];
-  cutomerLogo: Media[];
-  partnerLogo: Image[];
+  customersLogo: GroupImage;
+  partnersLogo: GroupImage;
   title: string;
 }
 
@@ -35,7 +35,7 @@ export interface TypicalCustomerPage {
   banner: Banner;
   description: string;
   logo: GroupImage;
-  customer: Customer[];
+  customers: Customer[];
 }
 export interface DevelopmentJourneyPage {
   banner: Banner;
@@ -47,12 +47,12 @@ export interface DevelopmentJourneyPage {
 
 export interface PartnersPage {
   banner: Banner;
-  logo: Image[];
+  logo: GroupImage;
 }
 
 export interface OpentLetturePage {
   banner: Banner;
   content: Richtext;
-  signature: Image;
+  signature: Picture;
   signer: string;
 }

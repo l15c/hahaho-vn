@@ -3,6 +3,10 @@ import {  Common, Media } from '@/types/common';
 // ---------------------------------Elements---------------------------------
 export interface Banner {
   title?: string;
+  name?: string;
+  demoUrl?: string;
+  trialUrl?: string;
+  description?: string;
   image: Media;
 }
 
@@ -19,11 +23,11 @@ export interface Flow {
 export interface StepFlow {
   text: string;
   image: Media;
-  content: Richtext;
+  content: string;
 }
 
 export interface HistoryItem {
-  content: Richtext;
+  content: string;
   logo: Media;
   period: string;
   color: string;
@@ -32,7 +36,7 @@ export interface HistoryItem {
 export interface ImageText {
   text: string;
   image: Media;
-  content: Richtext;
+  content: string;
 }
 
 export interface Leadership {
@@ -49,12 +53,12 @@ export interface Leadership {
 
 export interface Advantage {
   image: Media;
-  content: Richtext
+  content: string
 }
 
 export interface ProductBanner {
   name: string;
-  description: Richtext;
+  description: string;
   demoUrl: string;
   trialUrl: string;
   image: Media;
@@ -63,12 +67,12 @@ export interface ProductBanner {
 export interface ProductFeature {
   image: Media;
   title: string;
-  content: Richtext;
+  content: string;
 }
 
 // -------------------------------Shared---------------------------------
 
-export interface Image {
+export interface Picture {
   file: Media;
 }
 
