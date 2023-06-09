@@ -41,15 +41,16 @@ type PropProduct={
 }
 
 export default function Products({productPlatform,productInbusiness}:PropProduct) {
-  console.log(productPlatform);
   return (
     <section>
       <div className=" border-b-[3px] border-primary" />
       <div className="flex  text-center">
         <div className="mt-4 w-full flex-grow">
-          <p className="text-4xl font-bold uppercase">{}</p>
+          <p className="text-4xl font-bold uppercase">
+            {productPlatform.title}
+          </p>
           <p className="px-14 pt-3 text-2xl uppercase">
-            Bộ công cụ tự động hóa quy trình doanh nghiệp
+            {productPlatform.banner.name}
           </p>
         </div>
         <div className="divider mx-1 my-0 h-auto w-1 bg-primary" />
@@ -62,11 +63,16 @@ export default function Products({productPlatform,productInbusiness}:PropProduct
       </div>
       <div className="mt-10 flex text-center">
         <div className="w-full flex-grow">
-          <Link href={PATH.products.ibpm}>
-            <div className="relative mx-auto w-fit rounded-3xl bg-primary p-8">
+          <Link href={`/san-pham/${productPlatform.slug}`}>
+            <div
+              style={{
+                backgroundColor: productPlatform.color,
+              }}
+              className={`relative mx-auto w-fit rounded-3xl p-8`}
+            >
               <Image
                 alt="Platform"
-                src="/images/platform.png"
+                src={`/api${productPlatform.logo.url}`}
                 width={120}
                 height={120}
               />
@@ -74,32 +80,33 @@ export default function Products({productPlatform,productInbusiness}:PropProduct
           </Link>
         </div>
         <div className="w-full flex-grow">
-          <div className="grid grid-cols-2 gap-5">
-            {PRODUCTS.map((e) => (
-              <Link key={e.url} href={e.url}>
-                <div style={{color:e.color}}>
+          <div className="ml-4 grid grid-cols-2 gap-5">
+            {productInbusiness.map((e) => (
+              <Link key={e.slug} href={`/san-pham/${e.slug}`}>
+                <div style={{ color: e.color }}>
                   <div
                     className={`relative m-auto flex h-36 w-36 rounded-[20px] p-8`}
-                    style={{backgroundColor:e.color}}
+                    style={{ backgroundColor: e.color }}
                   >
                     <Image
-                      alt={e.name}
-                      src={e.iconUrl}
+                      alt={e.title}
+                      src={`/api/${e.logo.url}`}
                       width={0}
                       height={0}
                       sizes="100vw"
                       className="m-auto h-auto w-auto"
                     />
                   </div>
-                  <p className="mx-auto mt-4 font-bold uppercase">{e.name}</p>
-                  <p>
-                    Phần mềm quản lý
+                  <p className="mx-auto mt-4 font-bold uppercase">{e.title}</p>
+                  <p className="mx-auto w-[132px]">
+                    {e.banner.name}
                     <br />
-                    {e.title}
+                    {/* {e.title} */}
                   </p>
                 </div>
               </Link>
             ))}
+            
           </div>
         </div>
       </div>

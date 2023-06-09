@@ -7,7 +7,7 @@ export const metadata = {
   description: "",
 };
 
-export default async function Page() {
+export default async function  Page() {
   const res = await pagesApi.parnersPage();
 
   const {

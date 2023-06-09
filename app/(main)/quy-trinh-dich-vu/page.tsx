@@ -1,4 +1,5 @@
-import { Banner } from "@/sections/quy-trinh-dich-vu-va-hop-tac";
+import pagesApi from "@/api/pages";
+import Banner from '@/components/Banner';
 import TabDichVuVaHopTac from "@/sections/quy-trinh-dich-vu-va-hop-tac/tab-dich-vu-va-hop-tac";
 
 export const metadata = {
@@ -6,11 +7,13 @@ export const metadata = {
   description: "",
 };
 
-export default function Page() {
+export default async function Page() {
+    const res = await pagesApi.flowPgae();
+    const { banner, flows } = res.data;
   return (
     <section className="mb-24">
-      <Banner />
-      <TabDichVuVaHopTac/>
+      <Banner {...banner} />
+      <TabDichVuVaHopTac flows={flows}/>
     </section>
   );
 }

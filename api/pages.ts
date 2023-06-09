@@ -1,10 +1,12 @@
 import { Config, Response } from '@/types/common';
 import {
   DevelopmentJourneyPage,
+  FlowPage,
   HomePage,
   LeadershipPage,
   OpenLetterPage,
   PartnersPage,
+  ProductPage,
   TypicalCustomerPage,
 } from '@/types/page';
 import { GET } from '.';
@@ -48,6 +50,20 @@ const pagesApi = {
     }),
   homePage: (config?: Config) =>
     GET<Response<HomePage>>(`/api/home-page`, {
+      ...config,
+      params: {
+        populate: 'deep,4',
+      },
+    }),
+  productPage: (config?: Config) =>
+    GET<Response<ProductPage>>(`/api/product-page`, {
+      ...config,
+      params: {
+        populate: 'deep,4',
+      },
+    }),
+  flowPgae: (config?: Config) =>
+    GET<Response<FlowPage>>(`/api/flow-page`, {
       ...config,
       params: {
         populate: 'deep,4',
