@@ -2,8 +2,7 @@ import Image from 'next/image';
 import Frame from './frame.svg';
 import { paramCase } from 'param-case';
 import { Leadership } from '@/types/component';
-import html from '@/utils/html-parser';
-import Markdown from "@/components/Markdown";
+import Markdown from '@/components/Markdown';
 
 interface Props {
   leaderships: Leadership[];
@@ -25,14 +24,7 @@ export default function Content({ leaderships }: Props) {
   );
 }
 
-function Item({
-  pronouns,
-  name,
-  avatar,
-  position,
-  role,
-  content,
-}: Leadership) {
+function Item({ pronouns, name, avatar, position, role, content }: Leadership) {
   return (
     <>
       <div className="mx-auto">

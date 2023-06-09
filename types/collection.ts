@@ -1,4 +1,4 @@
-import {Common, Media} from "@/types/common";
+import { Common, Media } from '@/types/common';
 import {
   Advantage,
   Picture,
@@ -8,20 +8,21 @@ import {
 } from '@/types/component';
 
 export interface Product {
-    banner: ProductBanner;
-    description: Richtext;
-    featureImage: Media;
-    features: ProductFeature[];
-    advantages: Advantage[];
-    benefits: Richtext[];
-    title: string;
-    slug:string;
-    color:string;
+  title: string;
+  slug: string;
+  color: string;
+  logo: Media;
+  banner: ProductBanner;
+  description: string;
+  featureImage: Media;
+  features: ProductFeature[];
+  advantages: Advantage[];
+  benefits: Richtext[];
 }
 
 export interface GroupImage {
-    title: string;
-    images: Media[];
+  title: string;
+  images: Media[];
 }
 export type DynamicZone<T> = T & {
     __component: string;
