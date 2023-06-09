@@ -1,3 +1,5 @@
+import Markdown from "@/components/Markdown";
+
 type MaximProps = {
   description:string
 };
@@ -9,7 +11,7 @@ export default function Maxim({ description }: MaximProps) {
         Phương châm triển khai
       </p>
       <p className="mb-24 mt-14 rounded-[20px] bg-primary px-16 py-7 text-2xl text-white">
-        {description}
+        <Markdown data={description} />
       </p>
     </section>
   );

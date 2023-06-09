@@ -18,13 +18,12 @@ export interface Feature {
 
 export interface Flow {
   name: string;
-  steps: StepFlow[];
+  step: StepFlow[];
 }
 
 export interface StepFlow {
   text: string;
   image: Media;
-  content: string;
 }
 
 export interface HistoryItem {

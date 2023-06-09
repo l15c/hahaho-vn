@@ -21,6 +21,7 @@ export interface HomePage {
   title: string;
 }
 
+
 export interface LeadershipPage {
   banner: Banner;
   leaderships: Leadership[];
@@ -55,4 +56,10 @@ export interface OpenLetterPage {
   content: string;
   signature: Media;
   signer: string;
+}
+
+export interface ProductPage {
+  banner: Banner;
+  productPlatform: Product;
+  productInbusinesses: Product[];
 }
