@@ -3,28 +3,34 @@ import { AxiosRequestConfig } from 'axios';
 export type Config<D = any> = AxiosRequestConfig<D>;
 
 // Strapi
-export type Meta = {};
+export type Meta = {
+  pagination: Pagination & {
+    pageCount: number;
+    total: number;
+  };
+};
 
-interface MediaItem {
-    
-  }
+export type Pagination = {
+  page?: number;
+  pageSize?: number;
+};
+
 export interface Media {
-    id: number;
-    name: string;
-    alternativeText: string | null;
-    caption: string | null;
-    width: number;
-    height: number;
-    url: string;
-    createdAt: string;
-    updatedAt: string;
+  id: number;
+  name: string;
+  alternativeText: string | null;
+  caption: string | null;
+  width: number;
+  height: number;
+  url: string;
+  createdAt: string;
+  updatedAt: string;
 }
-
 
 export interface Common {
   createdAt: string;
   updatedAt: string;
-  publishedAt:string;
+  publishedAt: string;
 }
 
 export type ListResponse<> = {};
@@ -34,5 +40,4 @@ export type Response<T> = {
     id: number;
   } & T;
   meta: Meta;
-
 };

@@ -9,7 +9,7 @@ import {
   Richtext,
 } from '@/types/component';
 import { Media } from './common';
-import {Customer, GroupImage, Product} from "@/types/collection";
+import { Customer, GroupImage, Product } from '@/types/collection';
 
 export interface HomePage {
   banner: ProductBanner;
@@ -50,9 +50,9 @@ export interface PartnersPage {
   logo: Image[];
 }
 
-export interface OpentLetturePage {
+export interface OpenLetterPage {
   banner: Banner;
-  content: Richtext;
-  signature: Image;
+  content: string;
+  signature: Media;
   signer: string;
 }

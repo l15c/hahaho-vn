@@ -4,12 +4,32 @@ import Image from 'next/image';
 import { m } from 'framer-motion';
 import { MotionContainer, varFade } from '@/components/animate';
 import { Banner } from '@/types/component';
+import { twMerge } from 'tailwind-merge';
 
-export default function Banner({ title, image }: Banner) {
+interface Props extends Banner {
+  height?: number;
+  classBg?: string;
+  classImage?: string;
+}
+
+export default function Banner({
+  title,
+  image,
+  height,
+  classBg,
+  classImage = 'mix-blend-soft-light',
+}: Props) {
   return (
     <MotionContainer>
-      <section className="relative mx-auto h-[300px] max-w-[1920px]">
-        <div className="absolute h-full w-full bg-[#484848]" />
+      <section
+        className={twMerge(
+          'relative mx-auto h-[300px] max-w-[1920px]',
+          `h-[${height}px]`
+        )}
+      >
+        <div
+          className={twMerge('absolute h-full w-full bg-[#484848]', classBg)}
+        />
         <Image
           alt={image.alternativeText || `Banner ${title}`}
           src={`/api${image.url}`}
@@ -17,7 +37,7 @@ export default function Banner({ title, image }: Banner) {
           height={0}
           priority
           sizes="100vw"
-          className="h-full w-full object-fill mix-blend-soft-light"
+          className={twMerge('h-full w-full object-fill', classImage)}
         />
         <div className="absolute top-0 grid h-full w-full text-white">
           <m.p

@@ -1,4 +1,4 @@
-import {  Common, Media } from '@/types/common';
+import { Media } from '@/types/common';
 
 // ---------------------------------Elements---------------------------------
 export interface Banner {
@@ -16,6 +16,7 @@ export interface Flow {
   name: string;
   steps: StepFlow[];
 }
+
 export interface StepFlow {
   text: string;
   image: Media;
@@ -23,8 +24,8 @@ export interface StepFlow {
 }
 
 export interface HistoryItem {
-  content: Richtext;
-  logo: Media;
+  content: string;
+  logo?: Media;
   period: string;
   color: string;
 }
@@ -32,7 +33,7 @@ export interface HistoryItem {
 export interface ImageText {
   text: string;
   image: Media;
-  content: Richtext;
+  content: string;
 }
 
 export interface Leadership {
@@ -49,7 +50,7 @@ export interface Leadership {
 
 export interface Advantage {
   image: Media;
-  content: Richtext
+  content: Richtext;
 }
 
 export interface ProductBanner {
@@ -76,7 +77,7 @@ export interface Richtext {
   content: string;
 }
 
-export interface SEO{
+export interface SEO {
   metaTitle: string;
   metaDescription: string;
   shareImage: Media;
