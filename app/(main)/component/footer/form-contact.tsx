@@ -1,6 +1,52 @@
+'use client';
+
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
+import { FormEvent, useState } from 'react';
+import toast from 'react-hot-toast';
+import { twMerge } from 'tailwind-merge';
+
+const OPTIONS = [
+  'iBPM - Bộ công cụ tự động hóa quy trình nghiệp vụ',
+  'inBusiness - Bộ phần mềm đóng gói tinh hoa quản trị doanh nghiệp',
+];
 export default function FormContact() {
+  const router = useRouter();
+
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      const {
+        // @ts-ignore
+        name: { value: customerName },
+        option: { value: product },
+        company: { value: companyName },
+        email: { value: email },
+        phone: { value: phoneNumber },
+      } = e.currentTarget;
+
+      await axios.post('api/customer-contacts', {
+        data: {
+          customerName,
+          product,
+          companyName,
+          email,
+          phoneNumber,
+        },
+      });
+      setLoading(false);
+      toast.success('Gửi yêu cầu thành công');
+      router.push('/');
+    } catch (err) {
+      setLoading(false);
+    }
+  };
+
   return (
-    <>
+    <div>
       <div className="flex h-32 w-full items-center bg-primary text-[34px] font-bold text-white">
         <div className="mx-9 flex h-20 w-20 rounded-full bg-white opacity-90">
           <svg
@@ -20,7 +66,10 @@ export default function FormContact() {
           028 7303 4668
         </p>
       </div>
-      <form action="/" className="grid h-[540px] w-full gap-4 px-24 py-11">
+      <form
+        onSubmit={handleSubmit}
+        className="grid h-[540px] w-full gap-4 px-24 py-11"
+      >
         <div className="h-fit">
           <label htmlFor="name" className="block font-medium text-primary">
             Họ và tên (*):
@@ -30,38 +79,29 @@ export default function FormContact() {
             name="name"
             className="h-10 w-full border-b border-primary"
             required
+            disabled={loading}
           />
         </div>
         <div className="mt-1 h-fit">
           <label className="block font-medium text-primary">
             Sản phẩm/Giải pháp bạn quan tâm:
           </label>
-          <div className="form-control h-10">
-            <label className="label cursor-pointer">
-              <span className="label-text mr-2">
-                iBPM - Bộ công cụ tự động hóa quy trình nghiệp vụ
-              </span>
-              <input
-                type="radio"
-                name="option"
-                value={0}
-                className="radio checked:bg-primary"
-              />
-            </label>
-          </div>
-          <div className="form-control h-10">
-            <label className="label cursor-pointer">
-              <span className="label-text mr-2">
-                inBusiness - Bộ phần mềm đóng gói tinh hoa quản trị doanh nghiệp
-              </span>
-              <input
-                type="radio"
-                name="option"
-                value={1}
-                className="radio checked:bg-primary"
-              />
-            </label>
-          </div>
+          {OPTIONS.map((opt, idx) => (
+            <div key={idx} className="form-control h-10">
+              <label className="label cursor-pointer">
+                <span className="label-text mr-2">{opt}</span>
+                <input
+                  type="radio"
+                  name="option"
+                  value={opt}
+                  className="radio checked:bg-primary"
+                  disabled={loading}
+                  defaultChecked
+                  required
+                />
+              </label>
+            </div>
+          ))}
         </div>
         <div>
           <label htmlFor="company" className="block font-medium text-primary">
@@ -71,6 +111,7 @@ export default function FormContact() {
             type="text"
             name="company"
             className="h-10 w-full border-b border-primary"
+            disabled={loading}
           />
         </div>
         <div className="flex flex-col space-y-10 sm:flex-row sm:space-x-5 sm:space-y-0">
@@ -82,6 +123,7 @@ export default function FormContact() {
               name="email"
               type="email"
               className="h-10 w-full border-b border-primary"
+              disabled={loading}
             />
           </div>
           <div className="grow">
@@ -94,17 +136,21 @@ export default function FormContact() {
               pattern="(84|+84|0[3|5|7|8|9])+([0-9]{8})"
               className="h-10 w-full border-b border-primary"
               required
+              disabled={loading}
             />
           </div>
         </div>
         <button
           type="submit"
-          className="btn-primary btn mx-auto w-36 rounded-[50px] text-white"
+          className={twMerge(
+            'btn-primary btn mx-auto rounded-[50px] text-white',
+            loading && 'loading'
+          )}
         >
           Gửi thông tin
         </button>
       </form>
-    </>
+    </div>
   );
 }
 

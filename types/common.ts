@@ -41,3 +41,11 @@ export type Response<T> = {
   } & T;
   meta: Meta;
 };
+
+export type FormContact = {
+  customerName: string;
+  product?: string;
+  companyName: string;
+  email?: string;
+  phoneNumber: string;
+};

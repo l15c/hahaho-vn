@@ -14,8 +14,8 @@ export interface Product {
   logo: Media;
   banner: ProductBanner;
   description: string;
-  featureImage: Media;
-  features: ProductFeature[];
+  featureImage?: Media;
+  features?: ProductFeature[];
   advantages: Advantage[];
   benefits: Richtext[];
 }
@@ -24,10 +24,11 @@ export interface GroupImage {
   title: string;
   images: Media[];
 }
+
 export type DynamicZone<T> = T & {
-    __component: string;
-    id: number;
-}
+  __component: string;
+  id: number;
+};
 export type Customer = Common & {
   id: number;
   name: string;

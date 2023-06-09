@@ -3,10 +3,6 @@ import { Media } from '@/types/common';
 // ---------------------------------Elements---------------------------------
 export interface Banner {
   title?: string;
-  name?: string;
-  demoUrl?: string;
-  trialUrl?: string;
-  description?: string;
   image: Media;
 }
 
@@ -54,7 +50,7 @@ export interface Leadership {
 
 export interface Advantage {
   image: Media;
-  content: string
+  content: string;
 }
 
 export interface ProductBanner {

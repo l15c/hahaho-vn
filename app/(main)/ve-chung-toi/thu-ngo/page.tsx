@@ -1,10 +1,9 @@
-import { Letter } from '@/sections/about-us/thu-ngo';
 import pagesApi from '@/api/pages';
 import Banner from '@/components/Banner';
 import Markdown from '@/components/Markdown';
-import Image from 'next/image';
 import quoteSvg from '@/public/svg/quote.svg';
 import watermark from '@/public/svg/watermark.svg';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Thư ngỏ | HAHAHO',

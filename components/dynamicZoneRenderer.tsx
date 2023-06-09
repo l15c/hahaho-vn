@@ -1,14 +1,14 @@
+import Markdown from '@/components/Markdown';
 import { DynamicZone } from '@/types/collection';
 import { Picture, Richtext } from '@/types/component';
 import Image from 'next/image';
 
-
-const DynamicZoneRenderer = ( section:any, classStyle?:string|undefined ) => {
+const DynamicZoneRenderer = (section: any, classStyle?: string | undefined) => {
   switch (section.__component) {
     case 'shared.rich-text':
       return (
         <p className="w-[420px] text-justify text-2xl leading-[140%]">
-          {(section as DynamicZone<Richtext>).content}
+          <Markdown data={(section as DynamicZone<Richtext>).content} />
         </p>
       );
     case 'shared.image':

@@ -10,11 +10,12 @@ const productApi = {
         populate: `deep${deep ? `,${deep}` : ''}`,
       },
     }),
-  getListBasic: (pagination?: Pagination, config?: Config) =>
+  getListBasic: (pagination?: Pagination, filters?: unknown, config?: Config) =>
     GET<Response<Product[]>>('/api/products', {
       ...config,
       params: {
         ...(pagination && { pagination }),
+        filters,
         populate: {
           logo: { populate: 1 },
           banner: { populate: 1 },
@@ -39,7 +40,14 @@ const productApi = {
     });
 
     if (data.data.length !== 0) {
-      const dataOther = await this.getListBasic({ pageSize: 4 });
+      const dataOther = await this.getListBasic(
+        { pageSize: 4 },
+        {
+          slug: {
+            $ne: slug,
+          },
+        }
+      );
 
       return {
         ...data.data[0],

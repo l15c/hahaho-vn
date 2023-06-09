@@ -1,9 +1,9 @@
 'use client';
 
-import Image from 'next/image';
-import { m } from 'framer-motion';
 import { MotionContainer, varFade } from '@/components/animate';
 import { Banner } from '@/types/component';
+import { m } from 'framer-motion';
+import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
 
 interface Props extends Banner {
@@ -15,18 +15,13 @@ interface Props extends Banner {
 export default function Banner({
   title,
   image,
-  height,
+  height = 300,
   classBg,
   classImage = 'mix-blend-soft-light',
 }: Props) {
   return (
     <MotionContainer>
-      <section
-        className={twMerge(
-          'relative mx-auto h-[300px] max-w-[1920px]',
-          `h-[${height}px]`
-        )}
-      >
+      <section className="relative mx-auto max-w-[1920px]" style={{ height }}>
         <div
           className={twMerge('absolute h-full w-full bg-[#484848]', classBg)}
         />

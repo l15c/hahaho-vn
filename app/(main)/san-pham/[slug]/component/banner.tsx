@@ -1,20 +1,17 @@
 'use client';
 
 import { MotionContainer, varFade } from '@/components/animate';
-import Image from 'next/image';
+import Markdown from '@/components/Markdown';
+import { ProductBanner as Banner } from '@/types/component';
 import { m } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
-import html from '@/utils/html-parser';
 
-type Props = {
-  color: string;
-  name: string;
+interface Props extends Banner {
   title: string;
-  demoUrl: string;
-  trialUrl: string;
-  description: string;
-  imageUrl: string;
-};
+  color: string;
+}
+
 export default function ProductBanner({
   color,
   name,
@@ -22,8 +19,8 @@ export default function ProductBanner({
   demoUrl,
   trialUrl,
   description,
-  imageUrl,
-}: Partial<Props>) {
+  image,
+}: Props) {
   return (
     <MotionContainer>
       <section className="relative mx-auto h-[500px] max-w-[1920px] overflow-hidden lg:h-[624px]">
@@ -36,7 +33,7 @@ export default function ProductBanner({
         <div className="absolute z-[-1] h-full w-full bg-[#fff]/[0.57]" />
         <Image
           alt={name!}
-          src={imageUrl!}
+          src={`/api${image.url}`}
           width={0}
           height={0}
           sizes="100vw"
@@ -49,20 +46,20 @@ export default function ProductBanner({
               variants={varFade({ durationIn: 0.7 }).inLeft}
               className="text-4xl font-bold uppercase"
             >
-              {name}
+              {title}
             </m.p>
             <m.p
               variants={varFade({ durationIn: 0.7 }).inLeft}
               className="mt-2 text-2xl font-medium uppercase"
             >
-              {title}
+              {name}
             </m.p>
-            <m.p
+            <m.div
               variants={varFade({ durationIn: 0.7 }).inUp}
               className="mt-5 text-justify"
             >
-              {html(description!)}
-            </m.p>
+              <Markdown data={description} />
+            </m.div>
             <div className="mt-4 flex gap-4 md:mt-9">
               <Link href={demoUrl!}>
                 <m.button
@@ -86,7 +83,7 @@ export default function ProductBanner({
           </div>
           <div className="my-auto hidden w-1/2 lg:block">
             <Image
-              src={imageUrl!}
+              src={`/api${image.url}`}
               alt={name!}
               width={0}
               height={0}
