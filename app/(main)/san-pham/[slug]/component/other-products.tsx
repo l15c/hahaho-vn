@@ -48,7 +48,7 @@ export default function OtherProducts({ color, products }: Props) {
         {products.map(({ color, title, slug, logo, banner: { name } }) => {
           const _name = name.split('Phần mềm quản lý ').pop() ?? '';
           return (
-            <div className="flex">
+            <div key={slug} className="flex">
               <Link
                 key={slug}
                 href={`/san-pham${slug}`}

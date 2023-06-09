@@ -1,21 +1,16 @@
-import pagesApi from "@/api/pages";
-import { Slider } from '@/sections/homepage';
+import pagesApi from '@/api/pages';
 import Banner from '@/components/Banner';
-import CustomerStory from "@/sections/khach-hang-va-doi-tac/khach-hang-tieu-bieu/customer-story";
+import CustomerStory from './customer-story';
+import Slider from '@/components/SliderImage';
 
 export const metadata = {
-  title: "Khách hàng tiêu biểu | HAHAHO",
-  description: "",
+  title: 'Khách hàng tiêu biểu | HAHAHO',
+  description: '',
 };
 
 export default async function Page() {
   const res = await pagesApi.typicalCustomers();
-  const {
-    banner,
-    description,
-    logo,
-    customers,
-  } = res.data;
+  const { banner, description, logo, customers } = res.data;
   return (
     <>
       <Banner {...banner} />

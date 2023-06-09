@@ -1,18 +1,13 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { m } from "framer-motion";
-import { MotionContainer, varFade } from "@/components/animate";
-import { Banner } from "@/types/component";
+import Image from 'next/image';
+import { m } from 'framer-motion';
+import { MotionContainer, varFade } from '@/components/animate';
+import { ProductBanner } from '@/types/component';
 
-type Prop = Banner & { title: string };
+type Prop = ProductBanner & { title: string };
 
-export default function Banner({
-  title,
-  name,
-  description,
-  image,
-}: Prop) {
+export default function Banner({ title, name, description, image }: Prop) {
   return (
     <section className="relative mx-auto h-[462px] max-w-[1920px]">
       <MotionContainer>

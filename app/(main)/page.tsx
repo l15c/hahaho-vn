@@ -3,9 +3,8 @@ import {
   Banner,
   Maxim,
   Products,
-  Slider,
-  TechnologyPartner
 } from "../../sections/homepage";
+import Slider from '@/components/SliderImage';
 
 export const metadata = {
   title: "Trang chủ | HAHAHO",
