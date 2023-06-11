@@ -1,51 +1,52 @@
-import Link from "next/link";
-import Logo from "../logo";
-import Image from "next/image";
-import Script from "next/script";
-import BannerFooter from "./banner-footer";
-import { PATH } from "@/routes/path";
+import { PathPhone } from '@/app/(main)/component/footer/form-contact';
+import { PATH } from '@/routes/path';
+import Image from 'next/image';
+import Link from 'next/link';
+import Script from 'next/script';
+import Logo from '../logo';
+import BannerFooter from './banner-footer';
 
 const FOOTER = [
   {
-    title: "Về chúng tôi",
+    title: 'Về chúng tôi',
     href: PATH.aboutUs.root,
     items: [
-      { label: "Thư ngỏ", href: PATH.aboutUs.thuNgo },
+      { label: 'Thư ngỏ', href: PATH.aboutUs.thuNgo },
       {
-        label: "Hành trình phát triển",
+        label: 'Hành trình phát triển',
         href: PATH.aboutUs.hanhTrinh,
       },
-      { label: "Đội ngũ lãnh đạo", href: PATH.aboutUs.lanhDao },
+      { label: 'Đội ngũ lãnh đạo', href: PATH.aboutUs.lanhDao },
     ],
   },
   {
-    title: "Khách hàng & đối tác",
+    title: 'Khách hàng & đối tác',
     href: PATH.customer.root,
     items: [
-      { label: "Khách hàng tiêu biểu", href: PATH.customer.tieuBieu },
-      { label: "Đối tác công nghệ", href: PATH.customer.doiTac },
+      { label: 'Khách hàng tiêu biểu', href: PATH.customer.tieuBieu },
+      { label: 'Đối tác công nghệ', href: PATH.customer.doiTac },
     ],
   },
   {
-    title: "Sản phẩm",
+    title: 'Sản phẩm',
     href: PATH.products.root,
   },
   {
-    title: "Quy trình dịch vụ & hợp tác",
+    title: 'Quy trình dịch vụ & hợp tác',
     href: PATH.quyTrinh.root,
   },
   {
-    title: "Tin tức",
+    title: 'Tin tức',
     href: PATH.news.root,
     items: [
-      { label: "Tin HAHAHO", href: PATH.news.hahaho },
-      { label: "Sự kiện", href: PATH.news.suKien },
-      { label: "Thông cáo báo chí", href: PATH.news.thongCao },
-      { label: "Newsletter", href: PATH.news.newsletter },
+      { label: 'Tin HAHAHO', href: PATH.news.hahaho },
+      { label: 'Sự kiện', href: PATH.news.suKien },
+      { label: 'Thông cáo báo chí', href: PATH.news.thongCao },
+      { label: 'Newsletter', href: PATH.news.newsletter },
     ],
   },
   {
-    title: "Liên hệ",
+    title: 'Liên hệ',
     href: PATH.contact.root,
   },
 ];
@@ -53,17 +54,40 @@ const FOOTER = [
 export default function Footer() {
   return (
     <>
-      <div id="fb-root"/>
+      <div id="fb-root" />
       <Script
         async
         defer
         crossOrigin="anonymous"
         src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v17.0"
         nonce="iCdHa59O"
-      ></Script>
-      <footer >
+      />
+
+      <footer>
+        {/*Liên hệ*/}
+        <Link
+          href="tel:+842873034668"
+          className="fixed bottom-4 right-[108px] z-50 flex translate-x-full cursor-pointer rounded-full bg-primary p-5 transition-all duration-300 hover:right-0 hover:translate-x-0"
+        >
+          <div className="flex h-20 w-20 rounded-full bg-white opacity-90">
+            <svg
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              className="m-auto fill-primary"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <PathPhone />
+            </svg>
+          </div>
+          <div className="mx-2 flex flex-col justify-evenly	text-center font-bold leading-none">
+            <p className="text-[28px] uppercase text-white">Tư vấn trực tiếp</p>
+            <p className="text-[32px] text-white">028 7303 4668</p>
+          </div>
+        </Link>
+
         <BannerFooter />
-        <div className="px-14 mx-auto w-full max-w-[1440px]">
+        <div className="mx-auto w-full max-w-[1440px] px-14">
           <div className="my-8 grid grid-cols-12">
             <div className="col-span-12 grid gap-2 lg:col-span-8">
               <div className="h-24 w-fit">

@@ -6,3 +6,5 @@ import DOMPurify from 'isomorphic-dompurify';
 export default function html(html:string) {
     return parse(DOMPurify.sanitize(html))
 }
+
+export const sanitize = DOMPurify.sanitize

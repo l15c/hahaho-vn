@@ -37,7 +37,3 @@ html {
   opacity: 1 !important;
 }
 
-.slick-slide .slick-active{
-  width: fit-content !important;
-  margin: 0 10px !important;
-}

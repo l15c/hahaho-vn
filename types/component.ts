@@ -1,4 +1,4 @@
-import {  Common, Media } from '@/types/common';
+import { Media } from '@/types/common';
 
 // ---------------------------------Elements---------------------------------
 export interface Banner {
@@ -14,17 +14,17 @@ export interface Feature {
 
 export interface Flow {
   name: string;
-  steps: StepFlow[];
+  step: StepFlow[];
 }
+
 export interface StepFlow {
   text: string;
-  image: Media;
-  content: Richtext;
+  icon: Media;
 }
 
 export interface HistoryItem {
-  content: Richtext;
-  logo: Media;
+  content: string;
+  logo?: Media;
   period: string;
   color: string;
 }
@@ -32,7 +32,7 @@ export interface HistoryItem {
 export interface ImageText {
   text: string;
   image: Media;
-  content: Richtext;
+  content: string;
 }
 
 export interface Leadership {
@@ -49,12 +49,12 @@ export interface Leadership {
 
 export interface Advantage {
   image: Media;
-  content: Richtext
+  content: string;
 }
 
 export interface ProductBanner {
   name: string;
-  description: Richtext;
+  description: string;
   demoUrl: string;
   trialUrl: string;
   image: Media;
@@ -63,12 +63,12 @@ export interface ProductBanner {
 export interface ProductFeature {
   image: Media;
   title: string;
-  contetn: Richtext;
+  content: string;
 }
 
 // -------------------------------Shared---------------------------------
 
-export interface Image {
+export interface Picture {
   file: Media;
 }
 
@@ -76,50 +76,8 @@ export interface Richtext {
   content: string;
 }
 
-export interface Seo{
+export interface SEO {
   metaTitle: string;
   metaDescription: string;
   shareImage: Media;
-}
-
-
-
-// ---------------------------------Common---------------------------------
-
-export interface Product {
-  banner: ProductBanner;
-  description: Richtext;
-  featureImage: Media;
-  features: ProductFeature[];
-  advantages: Advantage[];
-  benefits: Richtext[];
-  title: string;
-  slug:string;
-  color:string;
-}
-
-export interface ListMedia {
-  title: string;
-  images: Media[];
-}
-
-export type Customer = Common & {
-  name: string;
-  year: number;
-  contents: Array<Richtext|Image>;
-};
-
-export interface ImageTitleContent {
-  image: Media;
-  content: string;
-  stage: string;
-}
-
-
-export interface CustomerStory {
-  id: number;
-  Name: string;
-  content1: string;
-  content2: string;
-  Image: Media[];
 }
