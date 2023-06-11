@@ -1,18 +1,17 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import QuyTrinh from "./quy-trinh";
-import { Flow } from "@/types/component";
-import { twMerge } from "tailwind-merge";
+import { Flow } from '@/types/component';
+import React, { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
+import FlowItem from './FlowItem';
 
 type Props = {
-  flows:Flow[]
+  flows: Flow[];
 };
 
-const TabDichVuVaHopTac = ({flows}: Props) => {
-  
+const Flows = ({ flows }: Props) => {
   const [tab, setTab] = useState(0);
-  
+
   return (
     <>
       <div className="mb-14 mt-8 flex justify-center text-center">
@@ -33,8 +32,8 @@ const TabDichVuVaHopTac = ({flows}: Props) => {
           </>
         ))}
       </div>
-      <QuyTrinh flow={flows[tab]} />
+      <FlowItem flow={flows[tab].step} />
     </>
   );
 };
-export default TabDichVuVaHopTac;
+export default Flows;

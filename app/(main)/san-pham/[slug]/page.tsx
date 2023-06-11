@@ -5,8 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ProductBanner from './component/banner';
 
-export const revalidate = 604800; // 7 days
-
 export async function generateStaticParams() {
   const products = await productApi.getList();
 
@@ -25,9 +23,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
     color,
     banner,
     description,
-    features,
     featureImage,
     advantages,
+    otherProducts,
   } = data;
   return (
     <div>
@@ -111,7 +109,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           >
             Các sản phẩm khác
           </p>
-          <OtherProducts color={color} products={data.otherProducts} />
+          <OtherProducts color={color} products={otherProducts} />
         </div>
       </div>
     </div>

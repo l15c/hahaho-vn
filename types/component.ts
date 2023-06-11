@@ -19,7 +19,7 @@ export interface Flow {
 
 export interface StepFlow {
   text: string;
-  image: Media;
+  icon: Media;
 }
 
 export interface HistoryItem {

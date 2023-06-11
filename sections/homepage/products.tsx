@@ -1,46 +1,16 @@
-import Image from 'next/image';
-import { PATH } from '@/routes/path';
-import Link from 'next/link';
 import { Product } from '@/types/collection';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const { hrm, crm, eOffice, task } = PATH.products;
-const PRODUCTS = [
-  {
-    url: eOffice,
-    color: '#00529C',
-    name: 'E-Office Management',
-    title: 'Văn phòng điện tử',
-    iconUrl: '/svg/e-office.svg',
-  },
-  {
-    url: task,
-    color: '#ED2224',
-    name: 'Task Management',
-    title: 'Công việc & Dự án',
-    iconUrl: '/svg/task.svg',
-  },
-  {
-    url: crm,
-    color: '#CC6C28',
-    name: 'Customer Relationship Management',
-    title: 'Quan hệ khách hàng',
-    iconUrl: '/svg/crm.svg',
-  },
-  {
-    url: hrm,
-    color: '#198754',
-    name: 'Human Resource Management',
-    title: 'Nguồn nhân lực',
-    iconUrl: '/svg/hrm.svg',
-  },
-];
+type PropProduct = {
+  productPlatform: Product;
+  productInbusiness: Product[];
+};
 
-type PropProduct={
-  productPlatform:Product,
-  productInbusiness:Product[],
-}
-
-export default function Products({productPlatform,productInbusiness}:PropProduct) {
+export default function Products({
+  productPlatform,
+  productInbusiness,
+}: PropProduct) {
   return (
     <section>
       <div className=" border-b-[3px] border-primary" />
@@ -63,7 +33,10 @@ export default function Products({productPlatform,productInbusiness}:PropProduct
       </div>
       <div className="mt-10 flex text-center">
         <div className="w-full flex-grow">
-          <Link href={`/san-pham/${productPlatform.slug}`}>
+          <Link
+            href={`/san-pham/${productPlatform.slug}`}
+            className="mx-auto block w-fit"
+          >
             <div
               style={{
                 backgroundColor: productPlatform.color,
@@ -82,7 +55,11 @@ export default function Products({productPlatform,productInbusiness}:PropProduct
         <div className="w-full flex-grow">
           <div className="ml-4 grid grid-cols-2 gap-5">
             {productInbusiness.map((e) => (
-              <Link key={e.slug} href={`/san-pham/${e.slug}`}>
+              <Link
+                key={e.slug}
+                href={`/san-pham/${e.slug}`}
+                className="mx-auto block w-fit"
+              >
                 <div style={{ color: e.color }}>
                   <div
                     className={`relative m-auto flex h-36 w-36 rounded-[20px] p-8`}
@@ -106,7 +83,6 @@ export default function Products({productPlatform,productInbusiness}:PropProduct
                 </div>
               </Link>
             ))}
-            
           </div>
         </div>
       </div>

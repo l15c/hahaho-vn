@@ -32,7 +32,7 @@ export default function ProductBanner({
         />
         <div className="absolute z-[-1] h-full w-full bg-[#fff]/[0.57]" />
         <Image
-          alt={name!}
+          alt={name}
           src={`/api${image.url}`}
           width={0}
           height={0}
@@ -41,7 +41,7 @@ export default function ProductBanner({
           className="absolute right-0 z-[-2] h-full w-auto object-contain bg-blend-color"
         />
         <div className="absolute flex h-full w-full px-10 md:px-28">
-          <div className="my-auto mr-0 w-full text-white lg:mr-8 lg:w-1/2">
+          <div className="my-auto mr-0 w-full text-white lg:mr-16 lg:w-1/2">
             <m.p
               variants={varFade({ durationIn: 0.7 }).inLeft}
               className="text-4xl font-bold uppercase"

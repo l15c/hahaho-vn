@@ -62,7 +62,7 @@ const pagesApi = {
         populate: 'deep,4',
       },
     }),
-  flowPgae: (config?: Config) =>
+  flowPage: (config?: Config) =>
     GET<Response<FlowPage>>(`/api/flow-page`, {
       ...config,
       params: {

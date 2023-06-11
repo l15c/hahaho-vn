@@ -1,14 +1,10 @@
-import pagesApi from "@/api/pages";
-import {
-  Banner,
-  Maxim,
-  Products,
-} from "../../sections/homepage";
+import pagesApi from '@/api/pages';
 import Slider from '@/components/SliderImage';
+import { Banner, Maxim, Products } from '../../sections/homepage';
 
 export const metadata = {
-  title: "Trang chủ | HAHAHO",
-  description: "",
+  title: 'Trang chủ | HAHAHO',
+  description: '',
 };
 
 export default async function Home() {
@@ -23,16 +19,19 @@ export default async function Home() {
     productPlatform,
     productInbusiness,
   } = res.data;
-  
+
   return (
     <>
-      <Banner {...{ title, ...banner }} />
+      <Banner title={title} {...banner} />
       <div className="mx-auto mt-24 max-w-[896px]">
         <Maxim description={description} />
         <p className="mb-16 text-center text-4xl font-bold uppercase text-primary">
           Sản phẩm
         </p>
-        <Products productInbusiness={productInbusiness} productPlatform={productPlatform}/>
+        <Products
+          productInbusiness={productInbusiness}
+          productPlatform={productPlatform}
+        />
       </div>
       <div className="mt-16 h-[100px] w-full bg-[#f8f8f9] text-center text-4xl font-bold uppercase leading-[100px] text-primary">
         Khách hàng tiêu biểu
